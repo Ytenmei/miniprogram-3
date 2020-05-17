@@ -1,0 +1,6 @@
+<view class="pyg_index">
+  <!-- 搜索框 S -->
+  <SearchInput></SearchInput> 
+  <!-- 搜索框 E -->
+</view>
+  
