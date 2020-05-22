@@ -1,0 +1,16 @@
+<wxs src="../../wxs/index.wxs" module="filter" />
+
+<scroll-view class="active_index" scroll-y  bindscrolltolower="getNextProList">
+  <view class="active_list">
+    <view class="active_item" wx:for="{{list}}">
+      <navigator  url="/pages/details/index?pid={{item.id}}">
+        <image class="active_product" src="{{filters.getImageUrl(item.pictureDefault)}}"></image>
+        <text class="active_text">{{item.nameFull}}</text>
+      </navigator>
+      <view class="active_price">
+        <text>¥</text>
+        <text>{{filter.toFixed(item.salePrice)}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

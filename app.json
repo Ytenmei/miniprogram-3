@@ -1,24 +1,18 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/category/index",
     "pages/cart/index",
     "pages/user/index",
     "pages/goods_list/index",
     "pages/goods_detail/index",
-    "pages/collect/index",
-    "pages/order/index",
-    "pages/search/index",
-    "pages/feedback/index",
+    "pages/orders_list/index",
     "pages/login/index",
-    "pages/auth/index",
-    "pages/pay/index",
-    "components/SearchInput/index"
+    "pages/activeList/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#eb4450",
-    "navigationBarTitleText": "优购",
+    "navigationBarTitleText": "福卡商城",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true
   },
@@ -29,12 +23,6 @@
         "pagePath": "pages/index/index",
         "iconPath": "icons/home.png",
         "selectedIconPath": "icons/home-o.png"
-      },
-      {
-        "text": "分类",
-        "pagePath": "pages/category/index",
-        "iconPath": "icons/category.png",
-        "selectedIconPath": "icons/category-o.png"
       },
       {
         "text": "购物车",

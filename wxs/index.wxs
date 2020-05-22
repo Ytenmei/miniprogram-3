@@ -1,0 +1,15 @@
+var setImageUrl = function (value) {
+  var index = value.indexOf("http")
+  if (index !== 0) {
+    return "http://yufumall-img4a.yufu.cn/" + value + "?x-oss-process=image/resize,m_pad,h_400,w_400"
+  } else {
+    return value
+  }
+}
+var toFixed = function (value) {
+  return Number(value).toFixed(2)
+}
+module.exports = {
+  setImageUrl: setImageUrl,
+  toFixed: toFixed
+}

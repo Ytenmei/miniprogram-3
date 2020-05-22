@@ -1,6 +1,56 @@
-<view class="pyg_index">
-  <!-- 搜索框 S -->
-  <SearchInput></SearchInput> 
-  <!-- 搜索框 E -->
-</view>
-  
+<wxs src="../../wxs/index.wxs" module="filter" />
+<scroll-view class="container">
+  <!-- 轮播图 S -->
+  <swiper indicator-dots="{{indicator_dots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{bannerList}}" wx:key="name">
+      <swiper-item>
+        <navigator bindtap='handleBindClick' data-item="{{item}}">
+          <image src='{{filter.setImageUrl(item.img_url)}}'></image>
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 轮播图 E -->
+
+  <!-- 宫格 S -->
+  <view class="grid">
+    <view class="grid_icon" wx:for="{{gridList}}" wx:key="name">
+      <navigator bindtap="handleBindClick" data-item="{{item}}">
+        <image src='{{filter.setImageUrl(item.img_url)}}'>
+        </image>
+        <text>{{item.name}}</text>
+      </navigator>
+    </view>
+  </view>
+  <!-- 宫格 E-->
+
+  <!-- 列表 S -->
+  <view class="goods" wx:for="{{goodsList}}" wx:key="name">
+    <view class="goods_title">
+      <text>——</text> {{item.name}} <text>——</text>
+    </view>
+    <navigator class="goods_iconTitle" bindtap="handleBindClick" data-item="{{item}}">
+      <image class="goods_titleImg" src="{{filter.setImageUrl(item.img_url)}}"></image>
+    </navigator>
+    <view class="goods_list">
+      <view class="goods_item" wx:for="{{item.articleList}}" wx:for-item="item2" wx:key="id">
+        <navigator bindtap="handleGoodsList" data-item="{{item2}}">
+          <image class="goods_product" src="{{filter.setImageUrl(item2.img)}}"></image>
+          <text class="goods_proText">{{item2.title}}.
+          </text>
+        </navigator>
+        <view class="goods_price">
+          <text>¥{{filter.toFixed(item2.price)}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 列表 E -->
+
+  <!-- 提示 S -->
+  <view class="tips">
+    <image src="/images/img_mall_logo.png"></image>
+    <view>更多好货，可访问福卡商城!</view>
+  </view>
+  <!-- 提示 E -->
+</scroll-view>
